@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NgxJakaService } from './ngx-jaka.service';
+import { ToastService } from './toast.service';
 
-describe('NgxJakaService', () => {
-  let service: NgxJakaService;
+describe('ToastService', () => {
+  let service: ToastService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(NgxJakaService);
+    service = TestBed.inject(ToastService);
   });
 
   it('should be created', () => {

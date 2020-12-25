@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxJakaComponent } from './ngx-jaka.component';
+import { JakaCardComponent } from './jaka-card.component';
 
-describe('NgxJakaComponent', () => {
-  let component: NgxJakaComponent;
-  let fixture: ComponentFixture<NgxJakaComponent>;
+describe('JakaCardComponent', () => {
+  let component: JakaCardComponent;
+  let fixture: ComponentFixture<JakaCardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NgxJakaComponent ]
+      declarations: [ JakaCardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgxJakaComponent);
+    fixture = TestBed.createComponent(JakaCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

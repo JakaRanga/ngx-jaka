@@ -42,6 +42,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngx-jaka"
+    }
+  },
+  "defaultProject": "ngx-jaka",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  }
 }

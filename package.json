@@ -6,7 +6,12 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "build-ngx-jaka": "ng build ngx-jaka --prod && npm run build-ngx-jaka-styles && npm run cp-ngx-jaka-assets",
+    "build-ngx-jaka-styles": "cpx \"./projects/ngx-jaka/src/lib/style/**/*\" \"./dist/ngx-jaka/style\" && scss-bundle -e ./projects/ngx-jaka/src/lib/style/dark-theme.scss -o ./dist/ngx-jaka/style/dark-theme.scss",
+    "cp-ngx-jaka-assets": "cpx \"./src/assets/**/*\" \"./dist/ngx-jaka/assets\"",
+    "publish-ngx-jaka": "cd ./dist/ngx-jaka && npm publish",
+    "build-and-publish": "npm run build-ngx-jaka && npm run publish-ngx-jaka"
   },
   "private": true,
   "dependencies": {
@@ -18,7 +23,9 @@
     "@angular/platform-browser": "~10.1.4",
     "@angular/platform-browser-dynamic": "~10.1.4",
     "@angular/router": "~10.1.4",
+    "cpx": "^1.5.0",
     "rxjs": "~6.6.0",
+    "scss-bundle": "^3.1.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
