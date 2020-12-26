@@ -1,7 +1,7 @@
 <div class="jaka-cp-toaster position-{{position}}">
 
-    <div *ngFor="let message of messages" class="theme-{{message.type}}">
-        {{message.message}}
+    <div *ngFor="let toast of toasts" class="theme-{{toast.type}}">
+        {{toast.message}}
     </div>
 
 </div>

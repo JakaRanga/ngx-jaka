@@ -1,41 +1,51 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ToastMessage } from '../../../models/toast-message.interface';
 import { ToastService } from '../../../services/toast.service';
 
 @Component({
-  selector: 'lib-jaka-toaster',
+  selector: 'jaka-toaster',
   templateUrl: './jaka-toaster.component.html',
   styleUrls: ['./jaka-toaster.component.scss']
 })
 export class JakaToasterComponent implements OnInit, OnDestroy {
 
   @Input() position: 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-right';
+  @Output() onToastAppear: EventEmitter<ToastMessage>;
+  @Output() onToastDisappear: EventEmitter<ToastMessage>;
 
-  messages: Array<ToastMessage>;
-  private messageSubscription: Subscription;
+  toasts: Array<ToastMessage>;
+  private toastSubscription: Subscription;
 
   constructor(private toastService: ToastService) {
-    this.messages = new Array<ToastMessage>();
+    this.toasts = new Array<ToastMessage>();
+    this.onToastAppear = new EventEmitter<ToastMessage>();
+    this.onToastDisappear = new EventEmitter<ToastMessage>();
   }
 
   ngOnInit(): void {
-    this.messageSubscription = this.toastService.onMessage()
-      .subscribe(message => {
-        this.messages.push(message);
-        setTimeout(() => this.removeMessage(message), 3000);
+    this.toastSubscription = this.toastService.onMessage()
+      .subscribe((toast: ToastMessage) => {
+        this.toasts.push(toast);
+        this.onToastAppear.emit(toast);
+
+        setTimeout(() => this.removeToast(toast), toast.duration ? toast.duration : 3000);
       });
   }
 
   ngOnDestroy() {
-    this.messageSubscription.unsubscribe();
+    this.toastSubscription.unsubscribe();
   }
 
-  private removeMessage(message: ToastMessage) {
-    if (!this.messages.includes(message))
+  onToastDismiss(toast: ToastMessage) {
+    this.removeToast(toast);
+  }
+
+  private removeToast(message: ToastMessage) {
+    if (!this.toasts.includes(message))
       return;
 
-    this.messages = this.messages.filter(x => x !== message);
+    this.toasts = this.toasts.filter(x => x !== message);
   }
 
 }

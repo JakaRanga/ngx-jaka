@@ -1,0 +1,35 @@
+$sizes: 40px, 50px, 80px;
+
+@each $size in $sizes {
+    $i: index($sizes, $size);
+
+    .m-#{$i} {
+        margin: #{$size} !important;
+    }
+
+    .ml-#{$i} {
+        margin-left: #{$size} !important;
+    }
+
+    .mt-#{$i} {
+        margin-top: #{$size} !important;
+    }
+
+    .mr-#{$i} {
+        margin-right: #{$size} !important;
+    }
+
+    .mb-#{$i} {
+        margin-bottom: #{$size} !important;
+    }
+    
+    .mx-#{$i} {
+        margin-left: #{$size} !important;
+        margin-right: #{$size} !important;
+    }
+
+    .my-#{$i} {
+        margin-top: #{$size} !important;
+        margin-bottom: #{$size} !important;
+    }
+}

@@ -1,0 +1,35 @@
+$sizes: 40px, 50px, 80px;
+
+@each $size in $sizes {
+    $i: index($sizes, $size);
+
+    .p-#{$i} {
+        padding: #{$size} !important;
+    }
+
+    .pl-#{$i} {
+        padding-left: #{$size} !important;
+    }
+
+    .pt-#{$i} {
+        padding-top: #{$size} !important;
+    }
+
+    .pr-#{$i} {
+        padding-right: #{$size} !important;
+    }
+
+    .pb-#{$i} {
+        padding-bottom: #{$size} !important;
+    }
+
+    .px-#{$i} {
+        padding-left: #{$size} !important;
+        padding-right: #{$size} !important;
+    }
+
+    .py-#{$i} {
+        padding-top: #{$size} !important;
+        padding-bottom: #{$size} !important;
+    }
+}
