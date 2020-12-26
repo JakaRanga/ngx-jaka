@@ -1,4 +1,4 @@
-<div class="flex-fill jaka-cp-sidebar jaka-cp-extended p-2" *ngIf="isOpen">
+<div class="h-100 jaka-cp-sidebar jaka-cp-extended p-2" [ngStyle]="{width: width}" *ngIf="isOpen">
     <div (click)="toggleSidebar()">
         x
     </div>
@@ -8,7 +8,7 @@
 
 </div>
 
-<div class="jaka-cp-sidebar p-2" *ngIf="!isOpen">
+<div class="h-100 jaka-cp-sidebar p-2" *ngIf="!isOpen">
     <div (click)="toggleSidebar()">
         x
     </div>

@@ -24,6 +24,7 @@
     "@angular/platform-browser": "~10.1.4",
     "@angular/platform-browser-dynamic": "~10.1.4",
     "@angular/router": "~10.1.4",
+    "@fortawesome/angular-fontawesome": "^0.8.1",
     "cpx": "^1.5.0",
     "rxjs": "~6.6.0",
     "scss-bundle": "^3.1.2",

@@ -4,12 +4,14 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   selector: 'jaka-sidebar',
   templateUrl: './jaka-sidebar.component.html',
   styleUrls: ['./jaka-sidebar.component.scss'],
-  host: { 'class': 'flex-fill d-flex flex-column' }
+  host: { 'class': 'h-100' }
 })
 export class JakaSidebarComponent implements OnInit {
 
+  @Input() width: string = '20vw';
   @Input() startsOpened: boolean = true;
   @Output() onSidebarToggle: EventEmitter<boolean>;
+  
   isOpen: boolean = true;
 
   constructor() { 
