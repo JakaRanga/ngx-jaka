@@ -1,1 +1,15 @@
-<p>jaka-app works!</p>
+<div class="jaka-cp-app d-flex flex-column">
+
+    <ng-content select="[toolbar]"></ng-content>
+
+    <div class="flex-fill d-flex flex-row">
+        <div class="flex-grow-1 d-flex flex-column">
+            <ng-content select="[sidebar]"></ng-content>
+        </div>
+
+        <div class="flex-grow-5 d-flex flex-column">
+            <ng-content select="[body]"></ng-content>
+        </div>
+    </div>
+
+</div>

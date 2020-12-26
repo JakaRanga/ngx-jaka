@@ -1,0 +1,12 @@
+$border-style: var(--border-color);
+$sides: top, bottom, left, right;
+
+.border {
+    border: $border-style !important;
+}
+
+@each $side in $sides {
+    .border-#{$side} {
+        border-#{$side}: $border-style !important;
+    }
+}

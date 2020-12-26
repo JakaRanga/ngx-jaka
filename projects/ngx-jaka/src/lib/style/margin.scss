@@ -1,7 +1,7 @@
-$sizes: 40px, 50px, 80px;
+$sizes: 0, .375rem , 0.75rem, 0.875rem, 1rem, 1.125rem;
 
 @each $size in $sizes {
-    $i: index($sizes, $size);
+    $i: index($sizes, $size) - 1;
 
     .m-#{$i} {
         margin: #{$size} !important;

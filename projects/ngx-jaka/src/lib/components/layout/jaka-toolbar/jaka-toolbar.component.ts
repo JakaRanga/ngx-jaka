@@ -1,15 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-jaka-toolbar',
+  selector: 'jaka-toolbar',
   templateUrl: './jaka-toolbar.component.html',
   styleUrls: ['./jaka-toolbar.component.scss']
 })
-export class JakaToolbarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class JakaToolbarComponent {}

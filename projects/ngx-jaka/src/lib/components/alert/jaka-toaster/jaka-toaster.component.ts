@@ -11,6 +11,7 @@ import { ToastService } from '../../../services/toast.service';
 export class JakaToasterComponent implements OnInit, OnDestroy {
 
   @Input() position: 'bottom-left' | 'bottom-right' | 'top-left' | 'top-right' = 'bottom-right';
+  @Input() messageStyle: string;
   @Output() onToastAppear: EventEmitter<ToastMessage>;
   @Output() onToastDisappear: EventEmitter<ToastMessage>;
 
@@ -29,7 +30,10 @@ export class JakaToasterComponent implements OnInit, OnDestroy {
         this.toasts.push(toast);
         this.onToastAppear.emit(toast);
 
-        setTimeout(() => this.removeToast(toast), toast.duration ? toast.duration : 3000);
+        setTimeout(() => {
+          this.removeToast(toast);
+          this.onToastDisappear.emit(toast)
+        }, toast.duration != undefined ? toast.duration : 3000);
       });
   }
 

@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "build-ngx-jaka": "ng build ngx-jaka --prod && npm run build-ngx-jaka-styles && npm run cp-ngx-jaka-assets",
-    "build-ngx-jaka-styles": "cpx \"./projects/ngx-jaka/src/lib/style/**/*\" \"./dist/ngx-jaka/style\" && scss-bundle -e ./projects/ngx-jaka/src/lib/style/dark-theme.scss -o ./dist/ngx-jaka/style/dark-theme.scss",
+    "build-ngx-jaka-styles": "cpx \"./projects/ngx-jaka/src/lib/style/**/*\" \"./dist/ngx-jaka/style\" && npm run scss-bundle-themes",
+    "scss-bundle-themes": "scss-bundle -e ./projects/ngx-jaka/src/lib/style/dark-theme.scss -o ./dist/ngx-jaka/style/dark-theme.scss && scss-bundle -e ./projects/ngx-jaka/src/lib/style/default-theme.scss -o ./dist/ngx-jaka/style/default-theme.scss",
     "cp-ngx-jaka-assets": "cpx \"./src/assets/**/*\" \"./dist/ngx-jaka/assets\"",
     "publish-ngx-jaka": "cd ./dist/ngx-jaka && npm publish",
     "build-and-publish": "npm run build-ngx-jaka && npm run publish-ngx-jaka"

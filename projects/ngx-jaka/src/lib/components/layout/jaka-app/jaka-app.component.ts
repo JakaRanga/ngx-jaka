@@ -1,15 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-jaka-app',
+  selector: 'jaka-app',
   templateUrl: './jaka-app.component.html',
-  styleUrls: ['./jaka-app.component.scss']
+  styleUrls: ['./jaka-app.component.scss'],
+  host: { 'class': 'w-100 h-100' }
 })
-export class JakaAppComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class JakaAppComponent {}

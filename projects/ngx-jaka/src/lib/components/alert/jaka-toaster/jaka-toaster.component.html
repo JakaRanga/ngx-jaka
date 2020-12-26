@@ -1,7 +1,18 @@
 <div class="jaka-cp-toaster position-{{position}}">
 
-    <div *ngFor="let toast of toasts" class="theme-{{toast.type}}">
-        {{toast.message}}
+    <div *ngFor="let toast of toasts" class="theme-{{toast.type}}"
+        [ngClass]="{messageStyle: messageStyle, 'jaka-cp-message': !messageStyle}">
+        
+        <div>
+            <h3 *ngIf="toast.title" class="m-0">
+                {{ toast.title }}
+            </h3>
+        
+            <div>
+                {{toast.message}}
+            </div>
+
+        </div>
     </div>
 
 </div>

@@ -1,1 +1,15 @@
-<p>jaka-sidebar works!</p>
+<div class="flex-fill jaka-cp-sidebar jaka-cp-extended p-2" *ngIf="isOpen">
+    <div (click)="toggleSidebar()">
+        x
+    </div>
+
+    <ng-content>
+    </ng-content>
+
+</div>
+
+<div class="jaka-cp-sidebar p-2" *ngIf="!isOpen">
+    <div (click)="toggleSidebar()">
+        x
+    </div>
+</div>
