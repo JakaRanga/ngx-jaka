@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
     JakaSidebarComponent,
     JakaToolbarComponent,
     JakaCardComponent,
-    JakaToasterComponent
+    JakaToasterComponent,
   ],
   imports: [
     CommonModule,

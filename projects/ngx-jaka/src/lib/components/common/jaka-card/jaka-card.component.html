@@ -1,3 +1,26 @@
 <div class="jaka-cp-card border">
 
+    <div class="jaka-cp-header border-bottom p-2">
+
+        <div class="jaka-cp-card-title mb-1">
+            <ng-content select="jaka-card-title, [jaka-card-title]"></ng-content>
+        </div>
+
+        <div class="text-muted">
+            <ng-content select="jaka-card-subtitle, [jaka-card-subtitle]"></ng-content>
+        </div>
+
+    </div>
+
+    <div class="p-2">
+        <ng-content select="jaka-card-body, [jaka-card-body]">
+
+        </ng-content>
+    </div>
+    
+    <div class="p-2">
+        <ng-content select="jaka-card-footer, [jaka-card-footer]">
+
+        </ng-content>
+    </div>
 </div>

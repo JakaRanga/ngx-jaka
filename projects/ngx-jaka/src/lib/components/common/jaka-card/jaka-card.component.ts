@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-jaka-card',
+  selector: 'jaka-card',
   templateUrl: './jaka-card.component.html',
   styleUrls: ['./jaka-card.component.scss']
 })
